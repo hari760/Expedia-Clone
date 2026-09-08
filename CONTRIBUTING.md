@@ -40,7 +40,7 @@ Create a branch from an up-to-date `main`:
 | `test/`  | Tests only             |
 | `chore/` | Tooling, deps, cleanup |
 
-Examples: `docs/expand-contributing`, `fix/pipeline-filter-crash`, `feat/export-audit-log`.
+Examples: `docs/expand-contributing`, `fix/flight-booking`, `feat/email-sign-in`.
 
 ```bash
 git checkout main
@@ -53,7 +53,7 @@ git checkout -b docs/your-short-description
 ## Code style
 
 - **Language:** JavaScript + React (Create React App), with json-server as a mock REST API for local data.
-- Prefer small, focused changes. Avoid drive-by refactors unrelated to the issue.
+- Prefer small, focused changes.
 - **No secrets or real PII** in code, commits, or screenshots.
 
 ---
@@ -70,7 +70,7 @@ test: update test cases for new feature
 chore: update packages
 ```
 
-Keep the subject short; put detail in the body if needed.
+Keep the subject short.
 
 ---
 
