@@ -21,8 +21,6 @@ export default function FlightCard({ data }) {
     });
   };
 
-  
-
   const Booknow = {
     marginTop: "3%",
     // width:"164px",
@@ -77,7 +75,7 @@ export default function FlightCard({ data }) {
         <h3>Price</h3>
         <b>{price}</b>
       </Flex>
-      <Link to={"/checkout"}>
+      <Link to={"/flightcheckout"}>
         <Button style={Booknow} onClick={handleClick}>
           Book Now
         </Button>
