@@ -1,8 +1,10 @@
-<h1>Chalo Ghume</h1>
+# Chalo Ghume
 
-<p>This project is a clone of the Expedia website, created by Team of 5 starting with Kumkum (Team Lead), Ashish, Amit, Sagar Balsaraf, and Sarim . The purpose of this project is to showcase our skills and knowledge in HTML, CSS, JavaScript, React, Redux, and Json-Server.<p>
+This project is a clone of the Expedia website, created by Team of 5 starting with Kumkum (Team Lead), Ashish, Amit, Sagar Balsaraf, and Sarim . The purpose of this project is to showcase our skills and knowledge in HTML, CSS, JavaScript, React, Redux, and Json-Server.
 
-<h2>Tech Stack</h2>
+This repository is being used by Landon Weidner,Alex O'Donohue,Harikrishna Guddati for SE 3290 to understand the fundamentals of project management.
+
+## Tech Stack
 
 - HTML
 - CSS
@@ -12,7 +14,7 @@
 - Json-Server
 - firebase
 
-<h2>Dependency</h2>
+## Dependency
 
 - axios
 - redux
@@ -25,7 +27,7 @@
 - react-router-dom
 - better-react-carousel
 
-<h2>Features</h2>
+## Features
 
 - Landing Page
 - Login and signup via firebase (OTP).
@@ -36,7 +38,7 @@
 - Cart Section
 - Admin Panel
 
-<h2>Installation</h2>
+## Installation
 
 To run this project locally, follow the steps below:
 
@@ -58,7 +60,7 @@ npm run server
 . Open the website in your browser:
 http://localhost:3000/
 
-<h2>Deployment</h2>
+## Deployment
 
 This project has been deployed using Vercel at the following URL:
 

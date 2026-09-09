@@ -12,7 +12,7 @@ const StayData = () => {
   const checkInDate = useSelector((state) => state.StayReducer.checkInDate);
   const checkOutDate = useSelector((state) => state.StayReducer.checkOutDate);
   const selectedCity = useSelector((state) => state.StayReducer.selectedCity);
-  console.log("city",selectedCity);
+  console.log("city", selectedCity);
   console.log("In", checkInDate);
   console.log("out", checkOutDate);
   const [selectedPriceRange, setSelectedPriceRange] = useState([0, 10000]);
@@ -21,8 +21,7 @@ const StayData = () => {
 
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const totalNumOfPages = Math.ceil(244 / 20); 
-
+  const totalNumOfPages = Math.ceil(244 / 20);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -32,9 +31,9 @@ const StayData = () => {
     dispatch(DeleteHotel(id));
   };
 
-  // useEffect(() => {
-  //   dispatch(fetchingHotels("","",""));
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchingHotels("", "", 1));
+  }, [dispatch]);
 
   useEffect(() => {
     if (data) {
@@ -42,19 +41,18 @@ const StayData = () => {
         data.filter(
           (hotel) =>
             hotel.price >= selectedPriceRange[0] &&
-            hotel.price <= selectedPriceRange[1]
-        )
+            hotel.price <= selectedPriceRange[1],
+        ),
       );
       console.log(filteredHotel);
     }
   }, [data, selectedPriceRange]);
 
-console.log(data)
+  console.log(data);
   return (
     <div className="stay-data">
-      
       <div className="sidebar-container">
-        <Sidebar/>
+        <Sidebar />
       </div>
 
       {filteredHotel?.map((hotel) => (
@@ -87,11 +85,11 @@ console.log(data)
         </div>
       ))}
       <div>
-      <Pagination
-        current={currentPage}
-        onChange={handlePageChange}
-        total={totalNumOfPages}
-      />
+        <Pagination
+          current={currentPage}
+          onChange={handlePageChange}
+          total={totalNumOfPages}
+        />
       </div>
     </div>
   );

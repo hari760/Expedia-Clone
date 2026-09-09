@@ -37,8 +37,11 @@ export const handleDeleteHotel = (payload) => {
 
 //Pick date and city for storing into redux store
 
-export const selectDateAndCity = (checkInDate,checkOutDate) => {
-  return { type: SELECTED_DATE_AND_CITY, payload: { checkInDate, checkOutDate } };
+export const selectDateAndCity = (checkInDate, checkOutDate) => {
+  return {
+    type: SELECTED_DATE_AND_CITY,
+    payload: { checkInDate, checkOutDate },
+  };
 };
 export const selectCity = (selectedCity) => {
   return { type: SELECTED_CITY, payload: { selectedCity } };
@@ -48,7 +51,7 @@ export const addHotel = (payload) => (dispatch) => {
   dispatch(hotelRequest());
 
   axios
-    .post("https://happy-sunglasses-eel.cyclic.app/hotel", payload) 
+    .post("http://localhost:8080/hotel", payload)
     .then(() => {
       dispatch(postHotelSuccess());
     })
@@ -59,11 +62,11 @@ export const addHotel = (payload) => (dispatch) => {
 
 //https://happy-sunglasses-eel.cyclic.app/hotel?_sort=asc&_order=price&page=1&_limit=20
 export const fetchingHotels = (sort, order, page) => async (dispatch) => {
-  console.log(order, sort,page);
+  console.log(order, sort, page);
   dispatch({ type: HOTEL_REQUEST });
   try {
     const res = await axios.get(
-      `https://happy-sunglasses-eel.cyclic.app/hotel?_sort=${sort}&_order=${order}&_page=${page}&_limit=20`
+      `http://localhost:8080/hotel?_sort=${sort}&_order=${order}&_page=${page}&_limit=20`,
     );
     console.log(res.data);
     dispatch({ type: GET_HOTEL_SUCCESS, payload: res.data });
@@ -73,23 +76,16 @@ export const fetchingHotels = (sort, order, page) => async (dispatch) => {
   }
 };
 
-
-
-
-
 //
 
 export const DeleteHotel = (deleteId) => async (dispatch) => {
   try {
-    const res = await fetch(
-      `https://happy-sunglasses-eel.cyclic.app/hotel/${deleteId}`, 
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`http://localhost:8080/hotel/${deleteId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     let data = await res.json();
     console.log(data);
     dispatch(handleDeleteHotel(deleteId));
