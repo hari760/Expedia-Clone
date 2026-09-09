@@ -32,7 +32,7 @@ This repository is being used by Landon Weidner,Alex O'Donohue,Harikrishna Gudda
 - Landing Page
 - Login and signup via firebase (OTP).
 - View details of flights, hotels.
-- Search for flights, hotels, and holiday packages
+- Search for flights and hotels
 - Sorting & Filtering and Seraching
 - Book flights, hotels.
 - Cart Section
