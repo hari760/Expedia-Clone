@@ -5,6 +5,7 @@ import "./StayData.css";
 import PriceFilter from "./PriceFilter";
 import Sidebar from "./Sidebar";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 
 const StayData = () => {
   const dispatch = useDispatch();
@@ -80,6 +81,9 @@ const StayData = () => {
                 <span>Rating:</span>
                 <p>{hotel.rating ? hotel.rating : 1}</p>
               </div>
+              <Link to={"/checkout"}>
+                <button className="stay-book-btn">Book Now</button>
+              </Link>
             </div>
           </div>
         </div>
